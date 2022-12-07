@@ -1,0 +1,1 @@
+<?= 'Hellow World with short echo ' ?>
