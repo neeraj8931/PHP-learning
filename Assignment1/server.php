@@ -60,8 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $response['status_code_header'] = 'HTTP/1.1 200 OK';
     $response['body'] = $resposnseCSSFile;
     http_response_code(201);
+    $cssFilePath = __DIR__."/sample.css";
     $resObj->css = $resposnseCSSFileData;
     $resObj->comments = $resposnseCSSCommentsFileData;
+    $resObj->downloadButton = "<a href='$cssFilePath' download >Download CSS without comments</a>";
     exit(json_encode($resObj));
 }
 ?>
