@@ -1,6 +1,8 @@
-/* .email-sub {
-  padding: 0.2rem;
-  border: 1px solid var(--primary-color);
-  border-radius: 4px;
+/* This is a single-line comment */
+p {
+  color: red;
+} 
+body{
+ color: yellow;
 }
-*/
+/* This is a second single-line comment */
