@@ -12,12 +12,30 @@ const setUser = () => {
     userEmail: userEmail,
   };
   console.log("saved data is", JSON.stringify(user));
-  
+  const options={
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(user),
+    };
+  fetch('/server.php',options)
+  .then(data=>{
+    return data.json();
+  })
+  .then(update=>{
+    console.log(update);
+    getUsers();
+  })
+  .catch(error=>{
+    console.log(error);
+  })
 };
 
 // Listing Users initially
 
 const getUsers = () => {
+  console.log("get request call started");
   fetch("server.php")
     .then((data) => {
       return data.json();
