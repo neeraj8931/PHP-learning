@@ -9,6 +9,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="index.js"></script>
+
+    <style>
+        .spinner {
+            width: 25px;
+            height: 25px;
+            margin: 20px auto;
+            border: 4px solid rgba(0, 0, 0, .1);
+            border-left: 4px solid #000;
+            border-right: 4px solid #000;
+            animation: spinner 1s linear infinite forwards;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 50%
+        }
+
+        @keyframes spinner {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        .spinner-section {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100vw;
+            background: lightgrey;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+
+        }
+    </style>
 </head>
 
 <body class="bg-themecolor">
@@ -26,12 +65,14 @@
             </div>
 
         </div>
+
         <div id="users" class="flex-1 w-50">
             <p class="text-xl mt-6 text-center">
                 No users yet.
             </p>
         </div>
     </div>
+
 
 </body>
 

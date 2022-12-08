@@ -3,6 +3,7 @@ let userLists = [];
 
 // Function to set Users
 const setUser = () => {
+ 
   console.log("setUser function Called..");
   let userName = document.getElementById("username").value;
   let userEmail = document.getElementById("useremail").value;
@@ -12,24 +13,25 @@ const setUser = () => {
     userEmail: userEmail,
   };
   console.log("saved data is", JSON.stringify(user));
-  const options={
-    method: 'POST',
+  const options = {
+    method: "POST",
     headers: {
-    'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
-    };
-  fetch('/server.php',options)
-  .then(data=>{
-    return data.json();
-  })
-  .then(update=>{
-    console.log(update);
-    getUsers();
-  })
-  .catch(error=>{
-    console.log(error);
-  })
+  };
+  fetch("/server.php", options)
+    .then((data) => {
+      return data.json();
+    })
+    .then((update) => {
+      console.log(update);
+      getUsers();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
 };
 
 // Listing Users initially
@@ -39,18 +41,21 @@ const getUsers = () => {
   fetch("server.php")
     .then((data) => {
       return data.json();
+      // data.json();
     })
-    .then((userList) => {
-      console.log(userList);
+    .then((message) => {
       let listNode = document.getElementById("users");
-      let HTML = "";
-      userList.map((element) => {
+      let HTML =
+        "<h1 class='text-3xl my-4 font-bold underline text-center'> User's List</h1>";
+      console.log(message);
+      message.map((element) => {
         userLists.push(element);
         HTML += `<p class="text-center">${element}</p>`;
       });
       listNode.innerHTML = HTML;
-      return userList;
     });
 };
+
+// fetting users data initially
 
 getUsers();
