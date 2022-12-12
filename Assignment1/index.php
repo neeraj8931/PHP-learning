@@ -25,6 +25,9 @@
         <div class="text-center">
             <button class="bg-black text-white p-[5px] w-2/5 my-5 border-black border-4 rounded-md" onclick="submit();"> Submit CSS </button>
         </div>
+        <div id="result">
+
+        </div>
 
     </div>
 

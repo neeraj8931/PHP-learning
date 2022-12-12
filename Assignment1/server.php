@@ -13,7 +13,8 @@ function openCommentedFileAndRemoveCSS($cssInput)
     $myfile = fopen("sample1.css", "r") or die("Unable to open file!");
     $myCommentFile = fopen("sample1.css", "r") or die("Unable to open file!");
     $css = fread($myCommentFile, filesize("sample1.css"));
-    $regx = '/\s*(?!<\")\/\*[^\*]+\*\/(?!\")\s*/';
+    // $regx = '/\s*(?!<\")\/\*[^\*]+\*\/(?!\")\s*/';
+    $regx ='/\s*\/\*[^\*]+\*\/\s*/';
     $removedComments = preg_replace($regx, '', $css);
     findCommentsAndWriteIntoAFile($removedComments);
     fclose($myfile);
@@ -23,7 +24,7 @@ function findCommentsAndWriteIntoAFile($removedComments)
 {
     $myfile = fopen("sample1.css", "r");
     $css = fread($myfile, filesize("sample1.css"));
-    $regx = '/\s*(?!<\")\/\*[^\*]+\*\/(?!\")\s*/';
+    $regx ='/\s*\/\*[^\*]+\*\/\s*/';
     $comments = preg_match_all($regx, $css, $matches);
     $removedCssComments = fopen("stylewithoutcomments1.css", "w");
     fwrite($removedCssComments, $removedComments);
@@ -60,10 +61,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $response['status_code_header'] = 'HTTP/1.1 200 OK';
     $response['body'] = $resposnseCSSFile;
     http_response_code(201);
-    $cssFilePath = __DIR__."/sample.css";
+    $cssFilePath = __DIR__."/stylewithoutcomments1.css";
     $resObj->css = $resposnseCSSFileData;
     $resObj->comments = $resposnseCSSCommentsFileData;
     $resObj->downloadButton = "<a href='$cssFilePath' download >Download CSS without comments</a>";
+    $resObj->message = "Comment removed successfully....you can find it in ".$cssFilePath;
     exit(json_encode($resObj));
 }
 ?>

@@ -10,6 +10,7 @@ async function postData(url = "") {
 }
 
 // submit function on click of submit of CSS input form
+let submitMessage ;
 function submit() {
   postData("/server.php").then((data) => {
     console.log(data);
@@ -25,7 +26,8 @@ function getData() {
       return response.json();
     })
     .then((data) => {
-      console.log("Success:", data);
+      console.log("Success:", data.message);
+      document.getElementById("result").innerHTML=`<p class="text-center">${data.message}</p>`;
     });
 };
 

@@ -38,13 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // output data of each row
-    while($row = $result->fetch_assoc()) {
-        array_push($users,$row["email"]);
-      }
-    echo json_encode($users);
-} else {
-    echo "6";
-  }
+        while ($row = $result->fetch_assoc()) {
+            array_push($users, $row["email"]);
+        }
+        echo json_encode($users);
+    } else {
+        echo "0";
+    }
 }
 //-----------
 
