@@ -1,0 +1,17 @@
+{
+    "name": "neeraj/assignment4",
+    "autoload": {
+        "psr-4": {
+            "Neeraj\\Assignment4\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Neeraj Personal",
+            "email": "er.neerajshukla.1010@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^5.4"
+    }
+}
