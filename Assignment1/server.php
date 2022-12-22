@@ -13,7 +13,6 @@ function openCommentedFileAndRemoveCSS($cssInput)
     $myfile = fopen("sample1.css", "r") or die("Unable to open file!");
     $myCommentFile = fopen("sample1.css", "r") or die("Unable to open file!");
     $css = fread($myCommentFile, filesize("sample1.css"));
-    // $regx = '/\s*(?!<\")\/\*[^\*]+\*\/(?!\")\s*/';
     $regx ='/\s*\/\*[^\*]+\*\/\s*/';
     $removedComments = preg_replace($regx, '', $css);
     findCommentsAndWriteIntoAFile($removedComments);

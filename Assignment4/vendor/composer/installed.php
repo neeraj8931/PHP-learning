@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'neeraj/assignment4',
+        'name' => '__root__',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '470711a7441e5b0972dc045992f7ad1b931ce943',
+        'reference' => '2f85be86079cff85118176a57815318e1c738548',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'neeraj/assignment4' => array(
+        '__root__' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '470711a7441e5b0972dc045992f7ad1b931ce943',
+            'reference' => '2f85be86079cff85118176a57815318e1c738548',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
