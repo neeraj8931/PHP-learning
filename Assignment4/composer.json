@@ -1,17 +1,14 @@
 {
-    "name": "neeraj/assignment4",
+    "require": {
+        "symfony/console": "^5.4",
+        "symfony/orm-pack": "^2.3"
+    },
     "autoload": {
         "psr-4": {
-            "Neeraj\\Assignment4\\": "src/"
+          "Src\\":"src"
         }
     },
-    "authors": [
-        {
-            "name": "Neeraj Personal",
-            "email": "er.neerajshukla.1010@gmail.com"
-        }
-    ],
-    "require": {
-        "symfony/console": "^5.4"
+    "require-dev": {
+        "symfony/maker-bundle": "^1.43"
     }
 }

@@ -33,6 +33,10 @@ const signUp = () => {
     password: document.getElementById("userPassword").value,
     name: document.getElementById("userName").value,
   };
+  if (data.email =="" || data.password == "" || data.name == ""){
+     window.alert(" fill all inputs");
+     return;
+  }
   fetch("signup.php", {
     method: "POST",
     body: JSON.stringify(data),
@@ -89,4 +93,9 @@ const showSignUpBox = () => {
 
 const editProfile = ()=>{
    console.log("edit profile called");
+}
+
+
+const addProduct =()=>{
+  console.log("add products called");
 }

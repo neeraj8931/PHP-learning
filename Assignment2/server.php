@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($conn->query($sql) === TRUE) {
         echo json_encode(array("UserCreated" => "UserCreated", "useDetails" => $email . " " . $name));
     } else {
-        echo "Error";
+        echo "Error".$conn->error;
     }
 }
 
